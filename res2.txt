@@ -1,0 +1,11 @@
+#python 3.9
+f = open('songs.txt', encoding='utf-8')
+li = f.readlines()
+for i in range(len(li)):
+    for j in range(len(li) - i - 1):
+
+        if li[i].split('?')[1] < li[j].split('?')[1]:
+            c = li[j]
+            li[j] = li[i]
+            li[i] = c
+print(li)

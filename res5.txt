@@ -1,0 +1,9 @@
+# python 3.9
+f = open('songs.txt', encoding='utf-8')
+d = dict()
+a = f.readline()
+for i in f.readlines():
+    i = i.split('?')
+    d[i[2]] = f'{i[1]} {i[3][:-1]} {i[0]}'
+for i in d.items():
+    print(i)

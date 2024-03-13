@@ -1,0 +1,9 @@
+#python 3.9
+f = open('songs.txt', encoding='utf-8')
+res = open('songs_artst.csv', 'w')
+res.write('track_name, streams, date')
+a = input()
+for i in f.readlines():
+    s = i.split('?')
+    if s[1] == a:
+        res.write(f'{s[2]};{s[0]};{s[3]}')

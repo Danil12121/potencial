@@ -1,0 +1,28 @@
+# python 3.9
+f = open('songs.txt', encoding='utf-8')
+h = open('songs_average.txt', mode='w', encoding='utf-8')
+dd = f.readline()
+# эти артисты - Dadafon, Ivan Spell, unknown
+a, b, c = 0, 0, 0
+aa, bb, cc = 0, 0, 0
+
+for i in f.readlines():
+    i = i.split('?')
+    date = i[3].split('.')
+    if int(date[2]) < 1990:
+        print(i[1])
+        if i[1] == 'Dadafon':
+            a += int(i[0])
+            aa += 1
+        if i[1] == 'Ivan Spell':
+            b += int(i[0])
+            bb += 1
+        if i[1] == 'unknown':
+            c += int(i[0])
+            cc += 1
+#Ivan Spell < unknown < Dadafon
+print(b/bb, c/cc, a/aa)
+
+h.write(str(b/bb)+'\n')
+h.write(str(c/cc)+'\n')
+h.write(str(a/aa))

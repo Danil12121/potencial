@@ -1,0 +1,10 @@
+#python 3.9
+f = open('songs.txt', encoding='utf-8')
+a = input()
+for i in f.readlines():
+    i = i.split('?')
+    if i[2] == a:
+        print(f'Песня {i[2]} принадлежит {i[1]}')
+        break
+else:
+    print('К сожалению, ничего не удалось найти')
